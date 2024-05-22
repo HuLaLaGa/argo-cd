@@ -17,8 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag argocd
     - name: Get CMD
-      run: docker run -d --rm --name argocd argocd tail -f /dev/null
-    - name: GET
-      run: docker exec -it argocd ls -alh
-    - name: RM
-      run: docker stop argocd
+      run: docker save argocd argocd.image.tar.gz
