@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag argocd
     - name: Get CMD
-      run: docker save argocd argocd.image.tar.gz
+      run: docker save argocd -o argocd.image.tar.gz
