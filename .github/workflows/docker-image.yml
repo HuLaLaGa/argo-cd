@@ -18,3 +18,8 @@ jobs:
       run: docker build . --file Dockerfile --tag argocd
     - name: Get CMD
       run: docker save argocd -o argocd.image.tar.gz
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: argocd-artifact
+        path: argocd.image.tar.gz
